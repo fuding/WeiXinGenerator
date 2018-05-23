@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>微信红包生成</title>
+
+		<meta name="renderer" content="webkit">
+
+		<!-- Bootstrap Core CSS -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- MetisMenu CSS -->
+		<link href="../css/metisMenu.min.css" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="../css/sb-admin-2.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<link href="../css/jquery.datetimepicker.css" rel="stylesheet" type="text/css">
+		<link href="../css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+		<link href="../css/dropdown.css" rel="stylesheet" type="text/css">
+
+		<link href="../css/common.css" rel="stylesheet" type="text/css">
+
+		<!-- jQuery -->
+		<script src="../js/jquery.min.js"></script>
+		<script>
+			var is_check_brower = true;
+			var is_mobile = '';
+			var image_type = 0;
+		</script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- Metis Menu Plugin JavaScript -->
+		<script src="../js/metisMenu.min.js"></script>
+		<!-- Custom Theme JavaScript -->
+		<link href="../css/layer.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/layer.js"></script>
+
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="../js/jquery.sglide.js"></script>
+		<script type="text/javascript" src="../js/sb-admin-2.js"></script>
+		<script type="text/javascript" src="../js/html2canvas.min.js"></script>
+		<script type="text/javascript" src="../js/emoji.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+
+		<style>
+			#wrapper {
+				width: 100%;
+				margin: 0 auto;
+				border: 1px solid #ccc;
+				position: static
+			}
+			
+			.iphone-redbg {
+				background: url(../images/red_bag_bg.png) no-repeat;
+			}
+			
+			.i-top-redbag,
+			.i-body-pay-detail,
+			.i-bottom-pay-detail {
+				background: none;
+			}
+			
+			.i-w-pay-money {
+				height: 110px;
+				height: 110px;
+				margin-top: 62px;
+			}
+			
+			.i-w-pay-money span {
+				font-size: 110px;
+				height: 110px;
+				background: none;
+				padding-left: 0;
+			}
+			
+			#red_yuan {
+				font-size: 24px;
+				padding-top: 20px;
+				padding-left: 3px;
+			}
+			
+			.i-w-pay-detail-gou-box {
+				width: 127px;
+				height: 117px;
+				margin: 0px auto;
+				margin-top: 27px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.i-w-pay-detail-gou {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 99;
+				width: 127px;
+				height: 117px;
+				background: rgba(0, 0, 0, 0) url("../images/red_bag_face_box.png") no-repeat scroll 0 0;
+				margin-top: 0;
+			}
+			
+			.i-w-pay-detail-gou-box img {
+				width: 117px;
+				height: 117px;
+				position: absolute;
+				top: 0;
+				left: 6px;
+			}
+			
+			.red_bag_name {
+				;
+				font-size: 28px;
+				font-weight: normal;
+				line-height: 30px;
+				height: 30px;
+				text-align: center;
+				margin-top: 19px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+
+			<!-- 主体 -->
+			<div id="page-wrapper">
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="page-header">轩版微信红包生成</h3></div>
+				</div>
+				<div class="row" style="position:relative;padding: 0 15px;">
+					<div class="panel-body panel-wx-tab">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a data-toggle="tab" href="#w1">外观设置</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div id="w1" class="tab-pane fade in active">
+								<div class="setting">
+									<p><span>信号强度：</span>
+										<select data-class="i-signal" class="slt-common">
+											<option value="i-signal1">1格</option>
+											<option value="i-signal2">2格</option>
+											<option value="i-signal3">3格</option>
+											<option value="i-signal4">4格</option>
+											<option value="i-signal5" selected="">5格</option>
+										</select>
+									</p>
+									<p><span>运营商：</span>
+										<select data-class="i-carrier" class="slt-common">
+											<option value="i-c-yd">中国移动</option>
+											<option value="i-c-lt">中国联通</option>
+											<option value="i-c-dx">中国电信</option>
+										</select>
+									</p>
+									<p><span>网络信号：</span>
+										<select data-class="i-network" class="slt-common">
+											<option value="">无</option>
+											<option value="i-n-wifi" selected="">Wifi</option>
+											<option value="i-n-g">G</option>
+											<option value="i-n-e">E</option>
+											<option value="i-n-3g">3G</option>
+											<option value="i-n-4g">4G</option>
+										</select>
+									</p>
+									<p>
+										<span>手机时间：</span>
+										<select class="slt-phone-time slt-p-shi">
+											<option>-</option>
+											<option>上午</option>
+											<option>下午</option>
+										</select>
+										<select class="slt-phone-time slt-p-hour">
+											<option>00</option>
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option selected="">12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15</option>
+											<option>16</option>
+											<option>17</option>
+											<option>18</option>
+											<option>19</option>
+											<option>20</option>
+											<option>21</option>
+											<option>22</option>
+											<option>23</option>
+										</select> :
+										<select class="slt-phone-time slt-p-minite">
+											<option>00</option>
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15</option>
+											<option>16</option>
+											<option>17</option>
+											<option>18</option>
+											<option>19</option>
+											<option>20</option>
+											<option>21</option>
+											<option>22</option>
+											<option>23</option>
+											<option>24</option>
+											<option>25</option>
+											<option>26</option>
+											<option>27</option>
+											<option>28</option>
+											<option>29</option>
+											<option>30</option>
+											<option>31</option>
+											<option>32</option>
+											<option>33</option>
+											<option>34</option>
+											<option>35</option>
+											<option>36</option>
+											<option>37</option>
+											<option>38</option>
+											<option>39</option>
+											<option>40</option>
+											<option>41</option>
+											<option>42</option>
+											<option>43</option>
+											<option>44</option>
+											<option>45</option>
+											<option>46</option>
+											<option>47</option>
+											<option>48</option>
+											<option>49</option>
+											<option>50</option>
+											<option>51</option>
+											<option>52</option>
+											<option>53</option>
+											<option>54</option>
+											<option>55</option>
+											<option>56</option>
+											<option>57</option>
+											<option>58</option>
+											<option selected="">59</option>
+										</select>
+									</p>
+									<p><span>锁定旋转：</span><label><input type="radio" checked="" value="1" name="top-dir" data-class="i-top-dir" class="rd-common">                  显示  </label>&nbsp;<label><input type="radio" value="0" name="top-dir" data-class="i-top-dir" class="rd-common">            不显示</label></p>
+									<div style="margin: 0 0 10px;margin-top: 20px;"><span>电量：</span>
+										<div class="slider_bar"></div>
+									</div>
+									<p><span>电池状态：</span>
+										<select data-class="i-top-berry" class="slt-common">
+											<option value="">正常</option>
+											<option value="i-top-berry2">充电中</option>
+										</select>
+									</p>
+									<p><span>电池百分比：</span><label><input type="radio" checked="" value="1" name="i-top-berry-num" data-class="i-top-berry-num" class="rd-common">                  显示  </label>&nbsp;<label><input type="radio" value="0" name="i-top-berry-num" data-class="i-top-berry-num" class="rd-common">               不显示</label></p>
+									<p><span>发红包人：</span><input type="text" id="red_nickname" value="杨轩"></p>
+									<script>
+										$(function() {
+											$('.red_bag_name').text($('#red_nickname').val() + '的红包');
+											$('#red_nickname').keyup(function() {
+												$('.red_bag_name').text($(this).val() + '的红包');
+											})
+										});
+									</script>
+									<p>
+										<span>红包金额：</span><input type="text" class="i-w-pay-money-change" value="88.88">
+										<script>
+											$(function() {
+												$('.i-w-pay-money-change').bind('input propertychange', function() {
+													var value = $(this).val();
+													if(!value || isNaN(value))
+														return false;
+													value = toDecimal2(value);
+													$('.i-w-pay-money span#red_bag_num').text(value);
+												});
+											});
+										</script>
+									</p>
+									<p><span>发红包人头像：</span>
+										<input id="rand_face_btn" class="btn btn-primary clear-dialog" type="button" value="随机生成" />
+										<input type="file" onchange="choicebg(this)" style="display: none;">
+										<input id="rand_face_btn" class="btn btn-primary clear-dialog" onclick="choiceBg(this)" data-dir="img" type="button" value="选择一个" />
+
+										<!--<span id="rand_face_btn" style="cursor:pointer;color:#ff5700;text-decoration:underline;">随机一个</span>--></p>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="my-btns">
+						<div class="loading">正在生成，请稍候......</div>
+						<input class="btn btn-success clear-dialog" type="button" disabled="disabled" style="margin-left: -100px;" />
+						<input id="save" class="btn btn-primary go_make" val="n" type="button" value="生成图片" />
+						<!--a id="btn-water" class="btn btn-danger btn_no_water" target="_blank" >去水印</a-->
+					</div>
+					<div class="clone_box">
+						<div class="phone-wrap">
+							<div class="iphone iphone-redbg" id="iphone">
+								<div class="i-top i-top-redbag">
+									<div class="i-top-div">
+										<div class="i-top-elm i-signal"></div>
+										<div class="i-top-elm i-carrier i-c-yd"></div>
+										<div class="i-top-elm i-network i-n-wifi"></div>
+										<div class="i-top-elm i-top-time">12:59</div>
+										<div class="i-top-elm-r i-top-berry"><i><em></em></i></div>
+										<div class="i-top-elm-r i-top-berry-num">50%</div>
+										<div class="i-top-elm-r i-top-dir"></div>
+									</div>
+								</div>
+								<div class="i-body i-body-pay-detail">
+									<div class="i-w-pay-detail-gou-box"><img id="head_img" src="../images/face/杨轩.jpg" />
+										<div class="i-w-pay-detail-gou"></div>
+									</div>
+									<div class="red_bag_name"></div>
+									<div class="i-w-pay-money"><span id="red_bag_num">88.88</span><span id="red_yuan">元</span></div>
+								</div>
+								<div class="i-bottom i-bottom-pay-detail"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /主体 -->
+
+		</div>
+		<script type="text/javascript" src="../js/name.js"></script>
+		<script type="text/javascript" language="javascript">
+			var is_mobile = '';
+			if(is_mobile == '1') {
+				$('.i-w-pay-money').addClass('i-w-pay-money-mobile');
+			}
+			function rand_face() {
+				var face_path = '../images/face/';
+				var num = get_random_num(1, names.length);
+				var file_name = names[num] + '.jpg';
+			
+				$('.i-w-pay-detail-gou-box img').attr('src', face_path + file_name);
+				$("#red_nickname").val(names[num]);
+				$('.red_bag_name').text($('#red_nickname').val() + '的红包');
+			}
+			$('#rand_face_btn').click(function() {
+				rand_face();
+			})
+			//触发隐藏file
+			function choiceBg(input) {
+				$(input).prev().click();
+			}
+			//添加对话背景图片
+			function choicebg(input) {
+				if(!$(input).val()) {
+					return false;
+				}
+				var imgFile = $(input).get(0);
+				var reader = new FileReader();
+				reader.readAsDataURL(imgFile.files[0]);
+				reader.onload = function(e) {
+					$("#head_img").attr("src", this.result)
+				}
+				return false;
+			}
+
+			$('body').on('change', '.a-u-pic-show input', function() {
+				var img = document.createElement('img'); //创建 img 对象
+				var _this = $(this);
+
+				window.URL = window.URL || window.webkitURL;
+
+				var imgFile = $(this).get(0);
+
+				if(window.URL && imgFile.files[0]) {
+					var reader = new FileReader();
+					reader.readAsDataURL(imgFile.files[0]);
+					reader.onload = function(e) {
+						var img = '<img src="' + this.result + '" alt=""/>';
+						_this.parent().find('img').remove();
+						_this.parent().append(img);
+						$('.i-b-a-face').css('background-image', 'url(' + this.result + ')');
+					}
+				}
+			});
+			
+				mkhandel(3);
+		</script>
+
+	</body>
+
+</html>

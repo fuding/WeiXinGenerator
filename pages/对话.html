@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<meta name="renderer" content="webkit">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bamy-imager-style" content="black-translucent">
+
+		<!-- Bootstrap Core CSS -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- MetisMenu CSS -->
+		<link href="../css/metisMenu.min.css" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="../css/sb-admin-2.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<link href="../css/jquery.datetimepicker.css" rel="stylesheet" type="text/css">
+		<link href="../css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+		<link href="../css/dropdown.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+		<!-- jQuery -->
+		<script src="../js/jquery.min.js"></script>
+		<script>
+			var is_check_brower = true;
+			var is_mobile = '';
+			var image_type = 0;
+		</script>
+
+		<!-- Bootstrap-->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- 电池-->
+		<script src="../js/metisMenu.min.js"></script>
+		<!-- 滑块-->
+		<script src="../js/jquery.sglide.js"></script>
+
+		<!-- 日历 -->
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+		<script type="text/javascript" src="../js/sb-admin-2.js"></script>
+		<script type="text/javascript" src="../js/html2canvas.min.js"></script>
+		<script type="text/javascript" src="../js/emoji.js"></script>
+		<script type="text/javascript" src="../js/name.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+
+	</head>
+
+	<body>
+		
+<div>
+</div>
+		<!-- 主体 -->
+		<div id="page-wrapper">
+
+			<div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header">轩版对话生成器</h3>
+				</div>
+			</div>
+
+			<div class="row" style="position:relative;padding: 0 15px;">
+				<div class="panel-body panel-wx-tab">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#w1" data-toggle="tab">外观设置</a>
+						</li>
+						<li>
+							<a href="#w2" data-toggle="tab">对话设置</a>
+						</li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="w1">
+							<div class="setting">
+
+								<p>
+									<span>信号强度：</span>
+									<select class="slt-common" data-class="i-signal">
+										<option value="i-signal1">1格</option>
+										<option value="i-signal2">2格</option>
+										<option value="i-signal3">3格</option>
+										<option value="i-signal4">4格</option>
+										<option selected value="i-signal5">5格</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span>运营商：</span>
+									<select class="slt-common" data-class="i-carrier">
+										<option value="i-c-yd">中国移动</option>
+										<option value="i-c-lt">中国联通</option>
+										<option value="i-c-dx">中国电信</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span>网络信号：</span>
+									<select class="slt-common" data-class="i-network">
+										<option value="">无</option>
+										<option selected value="i-n-wifi">Wifi</option>
+										<option value="i-n-g">G</option>
+										<option value="i-n-e">E</option>
+										<option value="i-n-3g">3G</option>
+										<option value="i-n-4g">4G</option>
+									</select>
+								</p>
+								<p>
+									<span>手机时间：</span>
+									<select class="slt-phone-time slt-p-shi">
+										<option>-</option>
+										<option>上午</option>
+										<option>下午</option>
+									</select>
+									<select class="slt-phone-time slt-p-hour">
+									</select> :
+									<select class="slt-phone-time slt-p-minite">
+									</select>
+								</p>
+								<p>
+									<span>锁定旋转：</span>
+									<label><input class="rd-common" data-class="i-top-dir" type="radio" name="top-dir" value="1" checked /> 显示</label>&nbsp;
+									<label><input class="rd-common" data-class="i-top-dir" type="radio" name="top-dir" value="0" /> 不显示</label>
+								</p>
+								<div style="margin: 0 0 10px;margin-top: 20px;">
+									<span>电量：</span>
+									<div class="slider_bar"></div>
+								</div>
+								<p>
+									<span>电池状态：</span>
+									<select class="slt-common" data-class="i-top-berry">
+										<option value="">正常</option>
+										<option value="i-top-berry2">充电中</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span>电池百分比：</span>
+									<label><input class="rd-common" data-class="i-top-berry-num" type="radio" name="i-top-berry-num" value="1" checked /> 显示</label>&nbsp;
+									<label><input class="rd-common" data-class="i-top-berry-num" type="radio" name="i-top-berry-num" value="0" /> 不显示</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span>听筒模式：</span>
+									<label><input class="rd-common" data-class="i-n-ear" type="radio" name="i-n-ear" value="1" /> 显示</label>&nbsp;
+									<label><input class="rd-common" data-class="i-n-ear" type="radio" name="i-n-ear" value="0" checked /> 不显示</label>
+								</p>
+								<p>
+									<span>聊天模式：</span>
+									<select class="slt-common" data-class="i-n-user">
+										<option value="">单聊</option>
+										<option value="i-n-user-group">群聊</option>
+									</select>
+								</p>
+								<p>
+									<span>聊天标题：</span>
+									<input type="text" value="duang~~~" data-class="i-n-name span" class="input-common" /> 群聊模式(括号)里是群聊人数
+								</p>
+								<p>
+									<span>消息数目：</span>
+									<input type="text" value="" class="input-i-n-count" />
+									<a class="btn-del-i-n-count" href="#">删除数目</a>
+								</p>
+								<p>
+									<span>显示用户昵称：</span>
+									<label><input class="rd-common radio-i-b-nick" data-class="i-b-nick" type="radio" name="i-b-nick" value="0" checked /> 不显示</label>&nbsp;
+									<label><input class="rd-common radio-i-b-nick" data-class="i-b-nick" type="radio" name="i-b-nick" value="1" /> 显示</label>
+								</p>
+								<p>
+									<span>底部输入框：</span>
+									<select class="slt-common" data-class="i-bottom">
+										<option value="">文本模式</option>
+										<option value="i-bottom2">语音模式</option>
+									</select>
+								</p>
+								<div style="overflow:hidden;margin:20px 0 40px 0;">
+
+									<div class="a-u-pic a-u-pic-bodybg">
+										<div class="a-u-pic-show">
+											<input type="file" data-callback="set_body_bg" accept="image/jpeg,image/x-png">
+										</div>
+									</div>
+
+									<div>
+										背景图片<span style="color:#f00">(图片大小:宽640 x 高1136)</span>
+										<br/>
+										<button type="button" class="btn btn-primary btn-bgModal" data-toggle="modal" data-target="#bgModal">选择背景</button>
+										<br/>
+										<a class="body_bg_del btn btn-danger btn_no_water" href="#">删除背景</a>
+									</div>
+
+									<!-- #bgModal -->
+									<div class="modal fade" id="bgModal" role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<h4 class="modal-title" id="myModalLabel">选择背景</h4>
+												</div>
+												<div class="modal-body">
+													<div id="bglist">
+														<!--li><a href="javascript:void(0);"><img src="../images/bg/1.jpeg" ></a></li-->
+													</div>
+													<div style="clear:both"></div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="w2">
+							<div class="setting">
+								<p style="border-bottom:1px #ccc dotted;padding-bottom:10px;">
+									<span>添加聊天时间：</span>
+									<select class="slt-xinqi">
+										<option>-</option>
+										<option>星期一</option>
+										<option>星期二</option>
+										<option>星期三</option>
+										<option>星期四</option>
+										<option>星期五</option>
+										<option>星期六</option>
+										<option>星期日</option>
+									</select>
+									<select class="slt-shi">
+										<option>-</option>
+										<option>上午</option>
+										<option>下午</option>
+										<option>凌晨</option>
+									</select>
+									<select class="slt-hour">
+									</select> :
+									<select class="slt-minite">
+									</select> &nbsp;
+									<a class="add-time-btn btn btn-primary btn-sm" href="#">添加</a>
+								</p>
+								<div class="users">
+									<div class="add-user">
+										<div class="a-u-pic">
+											<div class="a-u-pic-show">
+												<input type="file" accept="image/jpeg,image/x-png" />
+											</div>
+										</div>
+										<div class="a-u-name">
+											<p><span>用户名：</span><input class="a-u-data-name" type="text" value="" /></p>
+											<p><span>聊天内容：</span><textarea class="a-u-content">斗图大赛开始</textarea>
+												<a class="a-u-face btn-add-face" data-input="a-u-content" href="#">表情</a>
+											</p>
+											<p><span>转账/收钱金额：</span><input class="a-u-data-pay" type="text" value="88.88" /></p>
+											<p><span>语音时间：</span><input class="a-u-data-voice" type="text" value="10" /></p>
+											<p>
+												<input style="margin-right:10px;" class="btn btn-primary btn-rand-username" type="button" value="随机用户名" />
+												<input class="btn btn-primary btn-rand-face" type="button" value="随机头像" />
+											</p>
+										</div>
+										<div class="a-u-dialog" style="clear:both;">
+											<a class="btn btn-primary" data-type="left" href="#">添加文字对话</a>
+										</div>
+										<div class="a-u-dialog-voice">
+											<a class="btn btn-primary" data-type="left" href="#">添加语音对话</a>
+										</div>
+										<div class="a-u-dialog-img">
+											<input type="file" onchange="set_info_bg(this)" data-callback="set_info_bg(this)" style="display: none;">
+											<a class="btn btn-primary" onclick="addInfoBg(this)" data-dir="img" data-type="left" href="#">添加图片</a>
+										</div>
+										<div class="a-u-dialog-tag">
+											<a class="btn btn-primary" data-dir="tag" data-type="left" href="#">添加红包</a>
+										</div>
+										<div class="a-u-dialog-pay">
+											<a class="btn btn-primary" data-dir="send" data-type="left" href="#">添加转账对话</a>
+										</div>
+										<div class="a-u-dialog-pay">
+											<a class="btn btn-primary" data-dir="rec" data-type="left" href="#">添加收钱对话</a>
+										</div>
+										<div class="a-u-dialog-master">
+											<a class="btn btn-primary btn-success" href="#">设为主人</a>
+										</div>
+										<div class="a-u-dialog-del">
+											<a class="btn btn-danger" href="#">删除用户</a>
+										</div>
+									</div>
+								</div>
+								<!--<div class="btns">
+									<input id="add-user" class="btn btn-success" type="button" value="添加用户" />
+									<input class="btn btn-success clear-dialog" type="button" value="清除对话" />
+								</div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="my-btns">
+					<div class="loading">正在生成，请稍候......</div>
+					<input id="add-user" class="btn btn-success" type="button" value="添加用户" />
+					<input class="btn btn-success clear-dialog" type="button" value="清除对话" />
+					<input id="save" class="btn btn-primary" type="button" value="生成图片" />
+					<!--a id="btn-water" class="btn btn-danger btn_no_water" target="_blank" >去水印</a-->
+				</div>
+				<div class="phone-wrap">
+					<div id="iphone" class="iphone iphone-preview">
+						<div class="i-top">
+							<div class="i-top-elm i-signal"></div>
+							<div class="i-top-elm i-carrier i-c-yd"></div>
+							<div class="i-top-elm i-network i-n-wifi"></div>
+							<div class="i-top-elm i-top-time">00:00</div>
+							<div class="i-top-elm-r i-top-berry"><i><em></em></i></div>
+							<div class="i-top-elm-r i-top-berry-num">50%</div>
+							<div class="i-top-elm-r i-top-dir"></div>
+							<div class="i-nav">
+								<div class="i-n-back">
+									<div class="i-n-count"></div>
+								</div>
+								<div class="i-n-name">
+									<span>duang~~~</span>
+									<i class="i-n-ear" style="display:none">&nbsp;</i>
+								</div>
+								<div class="i-n-user"></div>
+							</div>
+						</div>
+						<div class="i-body">
+
+						</div>
+						<div class="i-bottom i-bottom-wechat">
+							<div class="i-b-we-left"></div>
+							<div class="i-b-we-mid">
+								<div class="i-b-we-mid-text"></div>
+							</div>
+							<div class="i-b-we-right"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="emojiPanel" id="emojiPanel">
+				<ul class="faceTab">
+					<li>
+						<a class="chooseFaceTab" href="javascript:;">QQ表情</a>
+					</li>
+					<li>
+						<a href="javascript:;">符号表情</a>
+					</li>
+				</ul>
+				<div class="faceWrap" style="zoom:1;outline:none;">
+					<div class="faceBox emojiArea"></div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /主体 -->
+		</div>
+
+		<!-- 底部 -->
+
+		<div class="pop-pic">
+			<img src="#" />
+			<div class="tips">
+				<p class="tips-pc">请将鼠标移动到上面图片上，然后点击鼠标右键，选择保持图片</p>
+				<a>继续制作</a>
+			</div>
+		</div>
+
+		<iframe id="ifm" style="display: none;" frameborder="0" class="hide_ifm" src="createImage.html"></iframe>
+
+		<script src="../js/dialogueGenerator.js"></script>
+		<script>
+			//页面初始化
+			$(function() {
+				$('.pop-pic .tips a').click(function() {
+					$('.pop-pic').hide();
+					$('#wrapper').show();
+				});
+
+				$('#save').click(function() {
+					var _this = $(this);
+					var div = $('#iphone').clone();
+
+					var my_image = $('.my-image');
+					console.log(my_image)
+					var mask = $('.mask');
+					console.log(mask)
+					if(!my_image.length) {
+						my_image = $('<div class="my-image">成功生成图片，点击 <a class="my-image-view" target="_blank" href="#">这里</a> 查看，<a class="my-image-continue" href="#">继续制作</a></div>');
+						$('body').append(my_image);
+					}
+					if(!mask.length) {
+						$('body').append('<div class="mask"></div>');
+					}
+
+					div.removeClass('iphone-preview');
+					div.css({
+						zoom: 1,
+						position: 'absolute',
+						left: 0,
+						top: 0
+					});
+					console.log(div)
+					$('#ifm').contents().find('body').append(div);
+					_this.hide();
+					$('.loading').show();
+					$('.my-image').hide();
+					$('.mask').hide();
+
+					html2canvas(div, {
+						onrendered: function(canvas) {
+							var myImage = canvas.toDataURL("image/png");
+
+							var pop_pic = $('.pop-pic');
+							var pop_class = 'pc';
+							if(browser.versions.mobile) {
+								pop_class = 'mobile';
+							}
+							pop_pic.find('.tips').addClass(pop_class);
+							console.log(pop_pic)
+							pop_pic.find('img').attr('src', myImage);
+							pop_pic.show();
+							$('#wrapper').hide();
+							$('.loading').hide();
+							_this.show();
+							div.remove();
+						}
+					});
+					return false;
+				});
+
+				/*背景选择*/
+				$(".btn-bgModal").click(function() {
+					var _arr = ['../images/bg/22.gif', '../images/bg/21.gif',
+						'../images/bg/20.gif', '../images/bg/19.gif',
+						'../images/bg/18.gif', '../images/bg/17.gif',
+						'../images/bg/16.jpg', '../images/bg/15.jpg',
+						'../images/bg/14.jpg', '../images/bg/13.jpg', '../images/bg/12.jpg',
+						'../images/bg/11.jpg', '../images/bg/10.jpg', '../images/bg/9.jpg',
+						'../images/bg/8.jpg', '../images/bg/7.jpg', '../images/bg/6.jpg',
+						'../images/bg/5.jpg', '../images/bg/4.jpg', '../images/bg/3.jpg',
+						'../images/bg/2.jpg', '../images/bg/1.jpg'
+					];
+					var _html = '<ul>';
+					for(var i in _arr) {
+						_html += '<li><a href="javascript:void(0);"><img src="' + _arr[i] + '" ></a></li>';
+					}
+					_html += '</ul>';
+					//选择背景
+					_html = $(_html)
+					_html.find('img').click(function() {
+						var src = $(this).attr('src');
+						$('.a-u-pic-bodybg img').attr("src", src);
+						
+						$('.i-body').css('background-image', 'url(' + src + ')');
+
+					});
+					$("#bglist").html(_html);
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

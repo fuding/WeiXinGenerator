@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- Bootstrap Core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom Fonts -->
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css">
+		<link href="css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<script>
+			var is_check_brower = true;
+			var is_mobile = '';
+			var image_type = 0;
+		</script>
+
+		<!-- Bootstrap-->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- 日历 -->
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+		<style>
+			html {
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			body {
+				height: 100%;
+			}
+			
+			#idx_box {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.tab-content {
+				height: 100%;
+			}
+			
+			.tab-content div {
+				width: 100%;
+				height: 96%;
+			}
+			
+			.tab-content div iframe {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.nav-tabs>li {
+				width: 120px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="idx_box">
+
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#iframe1" aria-controls="iframe1" role="tab" data-toggle="tab">对话生成器</a>
+				</li>
+				<li role="presentation">
+					<a href="#iframe2" aria-controls="iframe2" role="tab" data-toggle="tab">转账生成器</a>
+				</li>
+				<li role="presentation">
+					<a href="#iframe3" aria-controls="iframe3" role="tab" data-toggle="tab">零钱生成器</a>
+				</li>
+				<li role="presentation">
+					<a href="#iframe4" aria-controls="iframe4" role="tab" data-toggle="tab">红包生成器</a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="iframe1">
+					<iframe src="pages/对话.html"></iframe>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="iframe2">
+					<iframe src="pages/转账.html"></iframe>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="iframe3">
+					<iframe src="pages/零钱.html"></iframe>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="iframe4">
+					<iframe src="pages/红包.html"></iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
