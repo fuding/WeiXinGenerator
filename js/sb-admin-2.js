@@ -1,8 +1,4 @@
-$(function() {
 
-    $('#side-menu').metisMenu();
-
-});
 
 $(function() {
     $(window).bind("load resize", function() {
