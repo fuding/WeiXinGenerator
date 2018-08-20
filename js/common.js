@@ -189,7 +189,7 @@ $(function(){
       //var num = get_random_num(4,8);
     
        var face_path = '../images/face/';
-       randomnum = get_random_num(0,names.length);
+       randomnum = get_random_num(0,names.length-1);
   		console.log(names[randomnum])
       $(this).parents('.add-user').find('.a-u-data-name').val(names[randomnum]);
       var file_name = face_path + ([names[randomnum]]) + '.jpg';
