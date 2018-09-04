@@ -9,6 +9,7 @@
 					i = t.src;
 				if(!t.getAttribute("merge")) return i.substring(0, i.lastIndexOf("/") + 1)
 			}(),
+			zxc:{},
 			config: {},
 			end: {},
 			minIndex: 0,
